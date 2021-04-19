@@ -12,15 +12,20 @@ class HeroiconsTest < Minitest::Test
 
     x_icon = Heroicons::ICON_SYMBOLS["x"]
     assert x_icon
-    assert x_icon["name"]
-    assert x_icon["variants"]
+  end
+
+  def test_it_loads_one_icon_with_two_variants
+    x_icon = Heroicons::ICON_SYMBOLS["x"]
+
+    assert_equal 2, x_icon["variants"].length
     assert x_icon["variants"]["outline"]
-    assert x_icon["variants"]["outline"]["width"]
-    assert x_icon["variants"]["outline"]["height"]
-    assert x_icon["variants"]["outline"]["path"]
     assert x_icon["variants"]["solid"]
-    assert x_icon["variants"]["solid"]["width"]
-    assert x_icon["variants"]["solid"]["height"]
-    assert x_icon["variants"]["solid"]["path"]
+  end
+
+  def test_it_has_attributes_for_one_variants
+    x_icon = Heroicons::ICON_SYMBOLS["x"]
+    assert x_icon["variants"]["outline"]["height"]
+    assert x_icon["variants"]["outline"]["width"]
+    assert x_icon["variants"]["outline"]["path"]
   end
 end

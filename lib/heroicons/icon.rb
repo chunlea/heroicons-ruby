@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Heroicons
+  # Icon to show heroicons by name and variant.
   class Icon
     attr_reader :path, :options, :width, :height, :symbol, :variant
 
